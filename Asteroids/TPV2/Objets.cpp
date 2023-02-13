@@ -57,10 +57,6 @@ void Objets::MovingObject(Vector2D position, unsigned int h, unsigned int w, Tex
 	dir = dir_;
 }
 
-void Objets::render()
-{
-	Objets::render();
-}
 
 void Objets::update()
 {

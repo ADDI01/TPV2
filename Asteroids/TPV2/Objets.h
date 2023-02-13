@@ -30,7 +30,7 @@ public:
 	//virtual void handdleEvents(SDL_Event event){};
 
 	virtual void render();
-	virtual void update() {};
+	//virtual void update() {};
 	virtual void handdleEvents(SDL_Event event) {};
 
 	//metodos de la propia clase
@@ -42,6 +42,7 @@ public:
 	Texture* getText();
 	Vector2D* getPos();
 	void setPos(Vector2D pos);
+	void update();
 	Vector2D* getDir();
 	void setDir(Vector2D dir_);
 	virtual void Size(int change);
