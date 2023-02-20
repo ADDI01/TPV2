@@ -3,13 +3,13 @@
 
 void Fighter::Transform()
 {
-    Vector2D pos = *getPos() + *getDir();
+    *position = *getPos() + *getDir();
     
 }
 
 void Fighter::DeAcceleration()
 {
-
+    velocity = velocity * 0.995;
 }
 
 void Fighter::Image()

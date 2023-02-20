@@ -5,6 +5,7 @@
 #include "sdlutils/sdlutils_demo.h"
 
 int main(int ac, char **av) {
+	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF); // Check Memory Leaks
 	try {
 		sdlutils_basic_demo();
 	} catch (const std::string &e) { // catch exceptions thrown as strings
