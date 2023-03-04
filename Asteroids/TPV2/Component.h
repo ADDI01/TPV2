@@ -1,12 +1,12 @@
 #include "Manager.h"
 
-class Component
-{
+class Entity;
+class Component{
 public:
 	Component() : ent_(), mngr_() {}
 	virtual ~Component() {}
 	//Method: Para pasarle un puntero asu entidad y al manager
-	inline void setContext(Entity* ent, Entity* mngr) {
+	inline void setContext(Entity* ent, Manager* mngr) {
 		ent_ = ent;
 		mngr_ = mngr;
 	}

@@ -34,6 +34,21 @@
     <Filter Include="Header Files\game">
       <UniqueIdentifier>{250bc783-fdd8-4a0c-8a6f-415eb1d637e4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\game">
+      <UniqueIdentifier>{36129732-e84c-434e-b85d-15a14ef0e0cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ecs">
+      <UniqueIdentifier>{8df1457c-d3a1-456b-9e2d-856eab31920c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\components">
+      <UniqueIdentifier>{12f4c396-9fce-4072-8ebc-596ca97eb925}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ecs">
+      <UniqueIdentifier>{27e55a6e-2086-4a1f-ac07-b8ec485acbee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\components">
+      <UniqueIdentifier>{c440b88e-f155-478b-9689-dae8d6a63e15}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\json\JSONValue.h">
@@ -90,20 +105,32 @@
     <ClInclude Include="src\sdlutils\SDLNetUtils.h">
       <Filter>Header Files\sdlutil</Filter>
     </ClInclude>
-    <ClInclude Include="Objets.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Manager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="AsteroidsManager.h">
       <Filter>Header Files\game</Filter>
     </ClInclude>
-    <ClInclude Include="Entity.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Component.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\ecs</Filter>
+    </ClInclude>
+    <ClInclude Include="ecs.h">
+      <Filter>Header Files\ecs</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Header Files\ecs</Filter>
+    </ClInclude>
+    <ClInclude Include="Manager.h">
+      <Filter>Header Files\ecs</Filter>
+    </ClInclude>
+    <ClInclude Include="Message.h">
+      <Filter>Header Files\ecs</Filter>
+    </ClInclude>
+    <ClInclude Include="Objets.h">
+      <Filter>Header Files\ecs</Filter>
+    </ClInclude>
+    <ClInclude Include="System.h">
+      <Filter>Header Files\ecs</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Header Files\game</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -137,20 +164,26 @@
     <ClCompile Include="src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Objets.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Manager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="AsteroidsManager.cpp">
-      <Filter>Header Files\game</Filter>
-    </ClCompile>
-    <ClCompile Include="Entity.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\game</Filter>
     </ClCompile>
     <ClCompile Include="Component.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\ecs</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>Source Files\ecs</Filter>
+    </ClCompile>
+    <ClCompile Include="Objets.cpp">
+      <Filter>Source Files\ecs</Filter>
+    </ClCompile>
+    <ClCompile Include="Manager.cpp">
+      <Filter>Source Files\ecs</Filter>
+    </ClCompile>
+    <ClCompile Include="System.cpp">
+      <Filter>Source Files\ecs</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Source Files\game</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

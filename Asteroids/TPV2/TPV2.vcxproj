@@ -21,8 +21,11 @@
   <ItemGroup>
     <ClInclude Include="AsteroidsManager.h" />
     <ClInclude Include="Component.h" />
+    <ClInclude Include="ecs.h" />
     <ClInclude Include="Entity.h" />
+    <ClInclude Include="Game.h" />
     <ClInclude Include="Manager.h" />
+    <ClInclude Include="Message.h" />
     <ClInclude Include="Objets.h" />
     <ClInclude Include="src\json\JSON.h" />
     <ClInclude Include="src\json\JSONValue.h" />
@@ -42,11 +45,13 @@
     <ClInclude Include="src\utils\mpl.h" />
     <ClInclude Include="src\utils\Singleton.h" />
     <ClInclude Include="src\utils\Vector2D.h" />
+    <ClInclude Include="System.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AsteroidsManager.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="Game.cpp" />
     <ClCompile Include="Manager.cpp" />
     <ClCompile Include="Objets.cpp" />
     <ClCompile Include="src\json\JSON.cpp" />
@@ -59,6 +64,7 @@
     <ClCompile Include="src\sdlutils\Texture.cpp" />
     <ClCompile Include="src\utils\Collisions.cpp" />
     <ClCompile Include="src\utils\Vector2D.cpp" />
+    <ClCompile Include="System.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

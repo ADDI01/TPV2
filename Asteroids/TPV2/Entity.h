@@ -1,24 +1,19 @@
 #include <vector>
-#include "Component.h"
-class Entity
-{
-public:
-	Entity();
-	virtual ~Entity();
-	//Method: Para pasarle el Manager, lo necesita para pasarle a sus componentes
-	inline void setContext(Manager* mngr);
-	//Method: Consultar y cambiar el estado(alive o dead).
-	inline bool isAlive();
-	inline void setAlive(bool alive);
 
+class Component;
+class Entity {
+public:
+	Entity(ecs::grpId_type gId);
+	Entity(const Entity&) = delete;
+	Entity& operator=(const Entity&) = delete;
+	virtual ~Entity();
+	void update();
+	void render();
 private:
-#pragma region References
-	Manager* mngr_;
-#pragma endregion
-#pragma region Atributes
+	friend Manager;
+	std::vector<Component*> currCmps_;
+	std::array<Component*, maxComponentId> cmps_;
 	bool alive_;
-	vector<Component*> currCmps_;
-	array<Component*, ecs::maxComponentId> cmps_;
-#pragma endregion
+	ecs::grpId_type gId_;
 };
 
