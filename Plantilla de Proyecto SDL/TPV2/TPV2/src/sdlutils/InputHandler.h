@@ -25,7 +25,6 @@ public:
 
 	// clear the state
 	inline void clearState() {
-		isCloseWindoEvent_ = false;
 		isKeyDownEvent_ = false;
 		isKeyUpEvent_ = false;
 		isMouseButtonEvent_ = false;
@@ -53,26 +52,9 @@ public:
 		case SDL_MOUSEBUTTONUP:
 			onMouseButtonChange(event, false);
 			break;
-		case SDL_WINDOWEVENT:
-			handleWindowEvent(event);
-			break;
 		default:
 			break;
 		}
-	}
-
-	// refresh
-	inline void refresh() {
-		SDL_Event event;
-
-		clearState();
-		while (SDL_PollEvent(&event))
-			update(event);
-	}
-
-	// close window event
-	inline bool closeWindowEvent() {
-		return isCloseWindoEvent_;
 	}
 
 	// keyboard
@@ -158,17 +140,6 @@ private:
 		}
 	}
 
-	inline void handleWindowEvent(const SDL_Event &event) {
-		switch (event.window.event) {
-		case SDL_WINDOWEVENT_CLOSE:
-			isCloseWindoEvent_ = true;
-			break;
-		default:
-			break;
-		}
-	}
-
-	bool isCloseWindoEvent_;
 	bool isKeyUpEvent_;
 	bool isKeyDownEvent_;
 	bool isMouseMotionEvent_;
@@ -176,8 +147,7 @@ private:
 	std::pair<Sint32, Sint32> mousePos_;
 	std::array<bool, 3> mbState_;
 	const Uint8 *kbState_;
-}
-;
+};
 
 // This macro defines a compact way for using the singleton InputHandler, instead of
 // writing InputHandler::instance()->method() we write ih().method()

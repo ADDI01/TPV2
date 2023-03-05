@@ -33,14 +33,13 @@ Texture::Texture(SDL_Renderer *renderer, const std::string &fileName) {
 	texture_ = SDL_CreateTextureFromSurface(renderer, surface);
 	if (texture_ == nullptr) {
 		SDL_FreeSurface(surface);
-		throw "Couldn't convert surface to texture for image: " + fileName;
+		throw "Couldn't load image: " + fileName;
 	}
 
 	width_ = surface->w;
 	height_ = surface->h;
 	renderer_ = renderer;
 
-	SDL_FreeSurface(surface);
 }
 
 Texture::Texture(SDL_Renderer *renderer, const std::string &text,
@@ -63,17 +62,16 @@ void Texture::constructFromText(SDL_Renderer *renderer, const std::string &text,
 					font.renderText(text, *fgColor, *bgColor);
 
 	if (textSurface == nullptr)
-		throw "Couldn't create surface for text: " + text;
+		throw "Couldn't create text: " + text;
 
 	texture_ = SDL_CreateTextureFromSurface(renderer, textSurface);
 	if (texture_ == nullptr) {
 		SDL_FreeSurface(textSurface);
-		throw "Couldn't create texture for text: " + text;
+		throw "Couldn't create text: " + text;
 	}
 
 	width_ = textSurface->w;
 	height_ = textSurface->h;
 	renderer_ = renderer;
 
-	SDL_FreeSurface(textSurface);
 }

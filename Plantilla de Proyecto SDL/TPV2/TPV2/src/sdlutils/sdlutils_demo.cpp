@@ -7,14 +7,23 @@
 #include "InputHandler.h"
 #include "macros.h"
 #include "SDLUtils.h"
+#include "../ecs/Manager.h"
+#include "../ecs/Entity.h"
 
+// include de los components
+#include "../components/Transform.h"
+
+#include "../components/Image.h"
+#include "../components/ShowAtOppositeSide.h"
+#include "../components/Gun.h"
+#include "../components/FighterCtrl.h"
 using namespace std;
 
 void sdlutils_basic_demo() {
 
 	// Initialise the SDLGame singleton
-	SDLUtils::init("SDLGame Demo!", 800, 600,
-			"resources/config/sdlutilsdemo.resources.json");
+	SDLUtils::init("Asteroids", 800, 600,
+			"resources/config/resources.json");
 
 	// reference to the SDLUtils Singleton. You could use it as a pointer as well,
 	// I just prefer to use . instead of ->, it is just a matter of taste, nothing
@@ -25,18 +34,16 @@ void sdlutils_basic_demo() {
 	//
 	auto &sdl = *SDLUtils::instance();
 
-	//show the cursor
-	sdl.showCursor();
-
-	// store the 'renderer' in a local variable, just for convenience
+	//Manager* m = new Manager();
+	//// store the 'renderer' in a local variable, just for convenience
 	SDL_Renderer *renderer = sdl.renderer();
+	
 
 	// we can take textures from the predefined ones, and we can create a custom one as well
-	auto &sdlLogo = sdl.images().at("sdl_logo");
-	auto &helloSDL = sdl.msgs().at("HelloSDL");
+	
 	Texture pressAnyKey(renderer, "Press any key to exit",
 			sdl.fonts().at("ARIAL24"), build_sdlcolor(0x112233ff),
-			build_sdlcolor(0xffffffff));
+			build_sdlcolor(0xffffff));
 
 	// some coordinates
 	auto winWidth = sdl.width();
@@ -45,7 +52,6 @@ void sdlutils_basic_demo() {
 	auto y0 = (winHeight - pressAnyKey.height()) / 2;
 	auto x1 = 0;
 	auto y1 = y0 - 4 * pressAnyKey.height();
-	auto x2 = (winWidth - sdlLogo.width()) / 2;
 	auto y2 = y0 + 2 * pressAnyKey.height();
 
 	// start the music in a loop
@@ -57,12 +63,15 @@ void sdlutils_basic_demo() {
 
 	// a boolean to exit the loop
 	bool exit_ = false;
+	SDL_Event event;
 
 	while (!exit_) {
 		Uint32 startTime = sdl.currRealTime();
 
 		// update the event handler
-		ih.refresh();
+		ih.clearState();
+		while (SDL_PollEvent(&event))
+			ih.update(event);
 
 		// exit when any key is down
 		if (ih.keyDownEvent())
@@ -72,17 +81,10 @@ void sdlutils_basic_demo() {
 		sdl.clearRenderer();
 
 		// render Hello SDL
-		helloSDL.render(x1, y1);
-		if (x1 + helloSDL.width() > winWidth)
-			helloSDL.render(x1 - winWidth, y1);
-		x1 = (x1 + 5) % winWidth;
-
 		// render Press Any Key
 		pressAnyKey.render(x0, y0);
 
-		// render the SDLogo
-		sdlLogo.render(x2, y2);
-
+		
 		// present new frame
 		sdl.presentRenderer();
 

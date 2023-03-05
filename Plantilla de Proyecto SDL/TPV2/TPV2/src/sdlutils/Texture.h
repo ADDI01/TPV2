@@ -32,7 +32,6 @@ public:
 	Texture(SDL_Renderer *renderer, const std::string &text, const Font &font,
 			const SDL_Color &fgColor, const SDL_Color &bgColor);
 
-
 	virtual ~Texture() {
 		if (texture_ != nullptr)
 			SDL_DestroyTexture(texture_); // delete the SDL texture
