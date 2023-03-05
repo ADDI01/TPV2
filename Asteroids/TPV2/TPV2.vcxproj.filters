@@ -31,6 +31,24 @@
     <Filter Include="Source Files\json">
       <UniqueIdentifier>{f050c7fb-d995-4366-9eaf-e78d399a13f9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\ecs">
+      <UniqueIdentifier>{59a7f041-0ec2-46c9-bae9-91d5f70b4118}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\game">
+      <UniqueIdentifier>{6ada384a-6256-4751-9094-5f56fabdcbc4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\game">
+      <UniqueIdentifier>{93750041-4920-4c0f-b454-ca1d5b9be8f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ecs">
+      <UniqueIdentifier>{6129495f-f1de-40a6-8a09-326c6bfff6ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\component">
+      <UniqueIdentifier>{558efc0f-2db9-4256-a47d-0860ce3697b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\component">
+      <UniqueIdentifier>{f702cc27-1789-4d0b-a076-3d420d9d1d61}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\json\JSONValue.h">
@@ -43,9 +61,6 @@
       <Filter>Header Files\json</Filter>
     </ClInclude>
     <ClInclude Include="src\utils\Collisions.h">
-      <Filter>Header Files\utils</Filter>
-    </ClInclude>
-    <ClInclude Include="src\utils\mpl.h">
       <Filter>Header Files\utils</Filter>
     </ClInclude>
     <ClInclude Include="src\utils\Singleton.h">
@@ -87,11 +102,62 @@
     <ClInclude Include="src\sdlutils\SDLNetUtils.h">
       <Filter>Header Files\sdlutil</Filter>
     </ClInclude>
-    <ClInclude Include="Fighter.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\game\Game.h">
+      <Filter>Header Files\game</Filter>
     </ClInclude>
-    <ClInclude Include="Objets.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\ecs\Manager.h">
+      <Filter>Header Files\ecs</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ecs\mpl.h">
+      <Filter>Header Files\ecs</Filter>
+    </ClInclude>
+    <ClInclude Include="src\component\DisableOnExit.h">
+      <Filter>Header Files\component</Filter>
+    </ClInclude>
+    <ClInclude Include="src\component\Follow.h">
+      <Filter>Header Files\component</Filter>
+    </ClInclude>
+    <ClInclude Include="src\component\FramedImage.h">
+      <Filter>Header Files\component</Filter>
+    </ClInclude>
+    <ClInclude Include="src\component\Generations.h">
+      <Filter>Header Files\component</Filter>
+    </ClInclude>
+    <ClInclude Include="src\component\Gun.h">
+      <Filter>Header Files\component</Filter>
+    </ClInclude>
+    <ClInclude Include="src\component\Image.h">
+      <Filter>Header Files\component</Filter>
+    </ClInclude>
+    <ClInclude Include="src\component\Transform.h">
+      <Filter>Header Files\component</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\State.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\GameCtrl.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\ecs_defs.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\Manager.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ecs\ecs.h">
+      <Filter>Header Files\ecs</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ecs\Component.h">
+      <Filter>Header Files\ecs</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ecs\Entity.h">
+      <Filter>Header Files\ecs</Filter>
+    </ClInclude>
+    <ClInclude Include="src\component\FighterJ.h">
+      <Filter>Header Files\component</Filter>
+    </ClInclude>
+    <ClInclude Include="src\component\Health.h">
+      <Filter>Header Files\component</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -125,11 +191,50 @@
     <ClCompile Include="src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Fighter.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\game\Game.cpp">
+      <Filter>Source Files\game</Filter>
     </ClCompile>
-    <ClCompile Include="Objets.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\ecs\Entity.cpp">
+      <Filter>Source Files\ecs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ecs\Manager.cpp">
+      <Filter>Source Files\ecs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\component\DisableOnExit.cpp">
+      <Filter>Source Files\component</Filter>
+    </ClCompile>
+    <ClCompile Include="src\component\Follow.cpp">
+      <Filter>Source Files\component</Filter>
+    </ClCompile>
+    <ClCompile Include="src\component\FramedImage.cpp">
+      <Filter>Source Files\component</Filter>
+    </ClCompile>
+    <ClCompile Include="src\component\Generations.cpp">
+      <Filter>Source Files\component</Filter>
+    </ClCompile>
+    <ClCompile Include="src\component\Gun.cpp">
+      <Filter>Source Files\component</Filter>
+    </ClCompile>
+    <ClCompile Include="src\component\Image.cpp">
+      <Filter>Source Files\component</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\State.cpp">
+      <Filter>Source Files\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\GameCtrl.cpp">
+      <Filter>Source Files\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\Manager.cpp">
+      <Filter>Source Files\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\component\Transform.cpp">
+      <Filter>Source Files\component</Filter>
+    </ClCompile>
+    <ClCompile Include="src\component\FighterJ.cpp">
+      <Filter>Source Files\component</Filter>
+    </ClCompile>
+    <ClCompile Include="src\component\Health.cpp">
+      <Filter>Source Files\component</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -113,7 +113,7 @@ public:
 	// Computes the angle between 'this' and 'v'. The result is
 	// between -180 and 180, and is such that the following holds:
 	//
-	//   this->rotate(angle).normalize() == v.normalize()
+	//   this->rotate(angle) == v
 	//
 	float angle(const Vector2D &v) const;
 
