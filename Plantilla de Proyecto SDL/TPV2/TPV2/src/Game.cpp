@@ -20,30 +20,30 @@
 
 Game::Game()
 {
-	mngr_.reset(new Manager());
+	manager_.reset(new Manager());
 }
 
 Game::~Game()
 {
 	
-	mngr_.reset();
+	manager_.reset();
 }
 
 void Game::init()
 {
 	// Initialise the SDLGame singleton
-	SDLUtils::init("Asteroids", 800, 600,
-		"resources/config/sdlutilsdemo.resources.json");
+	SDLUtils::init("Asteroids", 800, 600,"resources / config / sdlutilsdemo.resources.json");
 
-
-	Entity* gManager = mngr_->addEntity();
+	//Generate the GameManager
+	Entity* gManager = manager_->addEntity();
 	gManager->addComponent<State>();
 	gManager->addComponent<AsteroidsManager>(5000,10);
 	gManager->addComponent<GameCtrl>();
 	gManager->addComponent<CollisionManager>();
-	mngr_->setHandler<GM>(gManager);
+	manager_->setHandler<GM>(gManager);
 
-	Entity* player = mngr_->addEntity(); 
+	//Generate the Player
+	Entity* player = manager_->addEntity(); 
 	player->addComponent<Transform>(Vector2D(sdlutils().width() / 2-25, sdlutils().height() / 2 -25), Vector2D(), 50, 50, 0);
 
 	player->addComponent<Image>(&sdlutils().images().at("fighter"));
@@ -51,7 +51,8 @@ void Game::init()
 	player->addComponent<Health>(3, &sdlutils().images().at("heart"));
 	player->addComponent<Gun>(50);
 	player->addComponent<ShowAtOppositeSide>();
-	mngr_->setHandler<Fighter>(player);
+
+	manager_->setHandler<Fighter>(player);
 
 
 }
@@ -77,14 +78,14 @@ void Game::start(){
 		if (ih().isKeyDown(SDLK_ESCAPE)) {
 			exit_ = true;
 		}
-		mngr_->refresh();
-		mngr_->update();
+		manager_->refresh();
+		manager_->update();
 
 		// clear screen
 		sdlutils().clearRenderer();
 
-		mngr_->render();
-		mngr_->getHandler<Fighter>()->render();
+		manager_->render();
+		manager_->getHandler<Fighter>()->render();
 
 
 		// present new frame

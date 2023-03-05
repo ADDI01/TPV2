@@ -20,7 +20,7 @@ private:
 	void update();
 	void render();
 
-	std::unique_ptr<Manager> mngr_;
+	std::unique_ptr<Manager> manager_;
 
 };
 
