@@ -85,7 +85,7 @@ bool onCollision(Entity* a) {
 }
 //Method: Desactivates all asteroids on the screen calling the 'setActive(false)' method of every one of them.
 void destroyAllAsteroids() {
-	/*for (auto a : ) {
+	for (auto a : _manager) {
 
-	}*/
+	}
 }

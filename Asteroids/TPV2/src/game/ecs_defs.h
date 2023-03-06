@@ -22,10 +22,10 @@ class State;
 class CollisionManager;
 class GameCtrl;
 
-#define _CMPS_LIST_  Transform, Image, /*DeAcceleration,*/ DisableOnExit, Fighter, Follow, FramedImage, Generations, Gun, Health, /*ShowAtOppositeSide,*/ State, /*AsteroidsManager,*/ CollisionManager, GameCtrl
+#define _CMPS_LIST_  Transform, Image, DeAcceleration, DisableOnExit, Fighter, Follow, FramedImage, Generations, Gun, Health, ShowAtOppositeSide, State, AsteroidsManager, CollisionManager, GameCtrl
 
 // groups -- forward declaration, but they are never defined as data structures
-//struct Asteroids;
+struct Asteroids;
 struct Bullets;
 //#define _GRPS_LIST_  Asteroids,Bullets
 

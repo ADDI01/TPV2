@@ -7,6 +7,8 @@
 class AsteroidsManager: public Component
 {
 public:
+	AsteroidsManager(Manager* mngr) : _manager(mngr), MAX_ASTEROIDS(30), nAsteroids(10) {}
+	~AsteroidsManager() { _manager = nullptr; nAsteroids = 0; }
 #pragma region Methods
 	//Method: Determinates the position where the asteroid spawns.
 	void spawnPointCoordinates(Vector2D& p);
@@ -24,11 +26,11 @@ public:
 #pragma endregion
 private:
 #pragma region References
-	Manager _manager;
+	Manager* _manager;
 #pragma endregion
 #pragma region Atributes
 	const int MAX_ASTEROIDS; //Maximum asteroids
 	int nAsteroids; //Current number of asteroids
-#pragma region
+#pragma endregion
 };
 
