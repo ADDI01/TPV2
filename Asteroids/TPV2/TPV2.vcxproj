@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ShowAtOppositeSide.h" />
     <ClInclude Include="src\component\DisableOnExit.h" />
     <ClInclude Include="src\component\FighterJ.h" />
     <ClInclude Include="src\component\Follow.h" />
@@ -33,6 +34,7 @@
     <ClInclude Include="src\ecs\Entity.h" />
     <ClInclude Include="src\ecs\Manager.h" />
     <ClInclude Include="src\ecs\mpl.h" />
+    <ClInclude Include="src\game\AsteroidsManager.h" />
     <ClInclude Include="src\game\ecs_defs.h" />
     <ClInclude Include="src\game\Game.h" />
     <ClInclude Include="src\game\GameCtrl.h" />
@@ -57,6 +59,7 @@
     <ClInclude Include="src\utils\Vector2D.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ShowAtOppositeSide.cpp" />
     <ClCompile Include="src\component\DisableOnExit.cpp" />
     <ClCompile Include="src\component\FighterJ.cpp" />
     <ClCompile Include="src\component\Follow.cpp" />
@@ -68,6 +71,7 @@
     <ClCompile Include="src\component\Transform.cpp" />
     <ClCompile Include="src\ecs\Entity.cpp" />
     <ClCompile Include="src\ecs\Manager.cpp" />
+    <ClCompile Include="src\game\AsteroidsManager.cpp" />
     <ClCompile Include="src\game\Game.cpp" />
     <ClCompile Include="src\game\GameCtrl.cpp" />
     <ClCompile Include="src\game\Manager.cpp" />
