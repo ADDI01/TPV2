@@ -16,9 +16,9 @@ class FramedImage;
 class Generations;
 class Gun;
 class Health;
-//class ShowAtOppositeSide;
+class ShowAtOppositeSide;
 class State;
-//class AsteroidsManager;
+class AsteroidsManager;
 class CollisionManager;
 class GameCtrl;
 
@@ -27,7 +27,7 @@ class GameCtrl;
 // groups -- forward declaration, but they are never defined as data structures
 struct Asteroids;
 struct Bullets;
-//#define _GRPS_LIST_  Asteroids,Bullets
+#define _GRPS_LIST_  Asteroids,Bullets
 
 // handlers -- forward declaration, but they are never defined as data structures
 struct Fighter;

@@ -7,8 +7,9 @@
 class AsteroidsManager: public Component
 {
 public:
-	AsteroidsManager(Manager* mngr) : _manager(mngr), MAX_ASTEROIDS(30), nAsteroids(10) {}
-	~AsteroidsManager() { _manager = nullptr; nAsteroids = 0; }
+	AsteroidsManager() : MAX_ASTEROIDS(30) {}
+	AsteroidsManager() : _manager(entity_->getMngr()), MAX_ASTEROIDS(30), nAsteroids(10) {}
+	~AsteroidsManager() { destroyAllAsteroids(); _manager = nullptr; nAsteroids = 0; }
 #pragma region Methods
 	//Method: Determinates the position where the asteroid spawns.
 	void spawnPointCoordinates(Vector2D& p);
@@ -20,7 +21,7 @@ public:
 	//Method: Handles collisions bullet-asteroid. If a bullet collides, desactivates the asteroid and 
 	//generates 2 new ones (depending on the generation).
 			//Param -> Entity *a: the asteroid about to be checked
-	bool onCollision(Entity* a);
+	void onCollision(Entity* a);
 	//Method: Desactivates all asteroids on the screen calling the 'setActive(false)' method of every one of them.
 	void destroyAllAsteroids();
 #pragma endregion

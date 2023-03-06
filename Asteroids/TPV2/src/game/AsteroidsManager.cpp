@@ -20,7 +20,6 @@
 
 //Method: Determinates the position where the asteroid spawns.
 void AsteroidsManager::spawnPointCoordinates(Vector2D& p) {
-
 	//Coord -> Calculates each coordinate of the asteroid (x, y) to set it on 'p' variable
 	//Random -> Determinates in which edge the asteroid spawns on (top, down, left, right)
 	int coord, random = sdlutils().rand().nextInt(0, 2);
@@ -58,7 +57,7 @@ void AsteroidsManager:: createAsteroids(int n) {
 	Vector2D v = Vector2D(c - p).normalize() * speed;
 
 	//Creates asteroid entity, with its parameters set and Components
-	Entity* asteroid = entity_->getMngr()->addEntity();
+	Entity* asteroid = _manager->addEntity();
 	asteroid->addComponent<Transform>(p, v, 10 + gen * 5, 10 + gen * 5, sdlutils().rand().nextInt(0, 360));
 	asteroid->addComponent<ShowAtOppositeSide>();
 	asteroid->addComponent<Generations>(gen);
@@ -74,18 +73,22 @@ void AsteroidsManager:: createAsteroids(int n) {
 	nAsteroids++;
 }
 //Method: Generates an asteroid every 5 sec calling 'createAsteroids(1)'.
-void addAsteroidsFrequently() {
+void AsteroidsManager:: addAsteroidsFrequently() {
 
 }
 //Method: Handles collisions bullet-asteroid. If a bullet collides, desactivates the asteroid and 
 //generates 2 new ones (depending on the generation).
 		//Param -> Entity *a: the asteroid about to be checked
-bool onCollision(Entity* a) {
+void AsteroidsManager:: onCollision(Entity* a) {
 
 }
 //Method: Desactivates all asteroids on the screen calling the 'setActive(false)' method of every one of them.
-void destroyAllAsteroids() {
-	for (auto a : _manager) {
-
+void AsteroidsManager:: destroyAllAsteroids() {
+	//Loops through the entities looking for the asteroids to set them to 'inactive'
+	for (Entity *aux : _manager->getEntities()) {
+		//If the entity has the Generations component, then its an asteroid
+		if (aux->hasComponent<Generations>()) {
+			aux->setActive(false);
+		}
 	}
 }
