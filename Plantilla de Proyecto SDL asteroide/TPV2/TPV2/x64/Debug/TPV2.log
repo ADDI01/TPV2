@@ -1,0 +1,7 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(499,5): warning MSB8004: El directorio Output no termina con una barra diagonal final. Esta instancia de compilación agregará la barra diagonal porque es necesaria para que se pueda evaluar correctamente el directorio Output.
+  Game.cpp
+C:\Users\pkn\Desktop\TPV2\Plantilla de Proyecto SDL asteroide\TPV2\TPV2\src\Game.cpp(44,12): warning C4101: 'event': variable local sin referencia
+  main.cpp
+  Generando código...
+     Creando biblioteca C:\Users\pkn\Desktop\TPV2\Plantilla de Proyecto SDL asteroide\TPV2\bin\TPV2Debug.lib y objeto C:\Users\pkn\Desktop\TPV2\Plantilla de Proyecto SDL asteroide\TPV2\bin\TPV2Debug.exp
+  TPV2.vcxproj -> C:\Users\pkn\Desktop\TPV2\Plantilla de Proyecto SDL asteroide\TPV2\bin\TPV2Debug.exe
